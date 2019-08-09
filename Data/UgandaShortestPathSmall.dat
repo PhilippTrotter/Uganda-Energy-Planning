@@ -1,0 +1,25 @@
+/*********************************************
+ * OPL 12.6.3.0 Data
+ * Author: pt428
+ * Creation Date: 12 Jun 2018 at 14:47:11
+ *********************************************/
+
+//currentStart = 1;
+//currentEnd = 2;
+
+//establish Excel connection
+SheetConnection sheet("20180802_ShortestPathInputSmall_v2.xlsx");
+
+
+//load indices
+RunStartCell from SheetRead(sheet,"'DistrSorted'!A2:A113");
+RunTerminateCell from SheetRead(sheet,"'DistrSorted'!A2:A113");
+
+
+//load parameters
+transcostInput from SheetRead(sheet,"'DataSorted'!E2:E12545");
+neighbourInput from SheetRead(sheet,"'DataSorted'!D2:D12545");
+
+
+//return model result
+x_binLong to SheetWrite(sheet,namePath);
